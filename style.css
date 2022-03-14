@@ -1,0 +1,148 @@
+:root{
+    --purplecolor: rgb(177, 10, 177);
+    --backcolor: #f7e1bb;
+    scrollbar-width: thin;
+    scrollbar-color: #575757 #f7e1bb;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+  }
+
+::-webkit-scrollbar-thumb {
+    background: #575757;
+}
+
+img.profilePic {
+    width: 180px;
+	border-radius: 4px;
+}
+
+img.miniPic {
+
+    width: 15pt;
+	vertical-align: middle;
+}
+
+h1.namePrincipal {
+    color      : black;
+    font-family: "Source Code Pro",monospace;
+	font-weight: bold;
+    max-width: max-content;
+    margin: 0 auto;
+    white-space: nowrap;
+   position: relative;
+}
+
+h1.namePrincipal::before,
+h1.namePrincipal::after{
+    content: "";
+  position:absolute ;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  left: 0;
+}
+h1.namePrincipal::before{
+    background: var(--backcolor);
+    animation: nameTextAnimation 2s 1s steps(23) forwards;
+}
+
+h1.namePrincipal::after{
+    width: 0.125em;
+    height: 0.75em;
+    margin-top: 0.2em;
+    background: black;
+    animation: 
+    nameTextAnimation 2s 1s steps(23) forwards,
+    blinkingTyper 750ms 6 forwards;
+    
+}
+
+@keyframes blinkingTyper{
+    to{
+        background: transparent;
+    }
+}
+@keyframes nameTextAnimation {
+    to{
+        left: 100%;
+    }
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--backcolor);
+}
+table.mainTable {
+    width    : 100%;
+    max-width: 1000px;
+    margin   : auto;
+    padding  : 5px;
+}
+
+table.mainTable th {
+    font-weight: bold;
+    color      : var(--purplecolor);
+    padding    : 5px;
+}
+
+table.mainTable td {
+    padding: 5px;
+}
+
+table.stdTable {
+    width    : 100%;
+    max-width: 1000px;
+    margin   : auto;
+    padding  : 5px;
+}
+
+table.stdTable th {
+    font-weight: bold;
+    color      : var(--purplecolor);
+    padding    : 5px;
+}
+
+table.stdTable td {
+    padding: 5px;
+}
+
+table.mainTable th.leftColumn,
+table.mainTable td.leftColumn,
+table.stdTable th.leftColumn,
+table.stdTable td.leftColumn {
+    width         : 250px;
+    text-align    : right;
+    vertical-align: text-top;
+}
+
+
+
+hr {
+    border-top: 3px solid var(--purplecolor);
+}
+
+table.languageTable,
+table.languageTable tr th{
+    font-weight: bold;
+    color: black;
+}
+
+table.languageTable,
+table.languageTable th,
+table.languageTable td {
+    width          : 100%;
+    border-collapse: collapse;
+    max-width: fit-content;
+    border         : 2px solid gray;
+    font-weight: normal;
+}
+
+a:visited,a:link{
+  color:var(--purplecolor);
+}
+a:hover{
+color:#D1B000;
+}
